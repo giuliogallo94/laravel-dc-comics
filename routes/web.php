@@ -17,4 +17,6 @@ use App\Http\Controllers\Admin\ComicController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/modals/delete/(comic}', [ComicController::class, 'show'])->name('comics.show');
+
 Route::resource('comics', ComicController::class);

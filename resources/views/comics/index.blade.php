@@ -31,13 +31,13 @@
                     <td><a href="{{ route('comics.show', ['comic' => $comic_item->id])}}" class="btn btn-success"><i class="fa-solid fa-info"></i></a></td>
                     <td><a href="{{ route('comics.edit', ['comic' => $comic_item->id])}}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a></td>
                     <td>
-                        <form action="{{ route('comics.destroy', ['comic' => $comic_item->id])}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
-                        </form>
+                        {{-- <form action="{{ route('comics.destroy', ['comic' => $comic_item->id])}}" method="POST"> --}}
+                            {{-- @csrf
+                            @method('DELETE') --}}
+                            <a class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $comic_item->id }}"><i class="fa-solid fa-trash" id="toDelete"></i></a>
+                        {{-- </form> --}}
                     </td>
-
+                    @include('modals.delete')
                 </tr>
             @endforeach
         </tbody>
