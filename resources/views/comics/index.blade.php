@@ -13,6 +13,7 @@
                 <th scope="col">Series</th>
                 <th scope="col">Type</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,8 @@
                     <td>{{$comic_item->series}}</td>
                     <td>{{$comic_item->type}}</td>
                     <td><a href="{{ route('comics.show', ['comic' => $comic_item->id])}}" class="btn btn-success">Details</a></td>
+                    <td><a href="{{ route('comics.edit', ['comic' => $comic_item->id])}}" class="btn btn-primary">Edit</a></td>
+
 
                 </tr>
             @endforeach
