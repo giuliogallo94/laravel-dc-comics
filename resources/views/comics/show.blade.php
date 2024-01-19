@@ -4,11 +4,10 @@
 <div class="container ">
     <div class="buttons d-flex align-items-center justify-content-between">
         <a href="{{ route('comics.index')}}"><button class="btn btn-success my-2"><i class="fa-solid fa-circle-arrow-left"></i></button></a>
-        <form action="{{ route('comics.destroy', ['comic' => $comic->id])}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
-        </form>
+        
+            <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $comic->id }}" ><i class="fa-solid fa-trash"></i></button>
+            @include('modals.delete_in_show')
+        
 
     </div>
 
