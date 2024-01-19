@@ -2,6 +2,9 @@
 
 @section('content') 
 <div class="container">
+
+    <a href="{{ route('comics.create')}}">Create new comic</a>
+
     <table class="table">
         <thead>
             <tr>
@@ -13,13 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($comics as $comic)   
+            @foreach ($comic as $comic_item)   
                 <tr>
-                    <th scope="row">{{$comic->id}}</th>
-                    <td>{{$comic->title}}</td>
-                    <td>{{$comic->series}}</td>
-                    <td>{{$comic->type}}</td>
-                    <td><a href="{{ route('comics.show', ['comic' => $comic->id])}}" class="btn btn-success">Details</a></td>
+                    <th scope="row">{{$comic_item->id}}</th>
+                    <td>{{$comic_item->title}}</td>
+                    <td>{{$comic_item->series}}</td>
+                    <td>{{$comic_item->type}}</td>
+                    <td><a href="{{ route('comics.show', ['comic' => $comic_item->id])}}" class="btn btn-success">Details</a></td>
 
                 </tr>
             @endforeach
