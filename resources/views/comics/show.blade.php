@@ -2,7 +2,16 @@
 
 @section('content') 
 <div class="container ">
-    <a href="{{ route('comics.index')}}"><button class="btn btn-success my-2">Go back</button></a>
+    <div class="buttons d-flex align-items-center justify-content-between">
+        <a href="{{ route('comics.index')}}"><button class="btn btn-success my-2">Go back</button></a>
+        <form action="{{ route('comics.destroy', ['comic' => $comic->id])}}">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+
+    </div>
+
    <div class="card show_card p-4 d-flex align-items-center gap-4 text-center">
         
     <div class="d-flex flex-column">

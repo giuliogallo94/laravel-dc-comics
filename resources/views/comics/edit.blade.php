@@ -2,6 +2,10 @@
 
 @section('content') 
 <div class="container">
+
+        <a href="{{ route('comics.index')}}"><button class="btn btn-success my-2">Go back</button></a>
+   
+    
    <h2 class="text-center">Crea un nuovo comics</h2>
 
    <div class="row justify-content-center">
@@ -26,7 +30,7 @@
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" id="price" name="price" value="{{$comic->price}}">
+                    <input type="text" class="form-control" id="price" name="price" value="{{$comic->price}}">
                 </div>
 
                 <div class="mb-3">
