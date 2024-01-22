@@ -34,19 +34,24 @@
                     <td>{{$comic_item->title}}</td>
                     <td>{{$comic_item->series}}</td>
                     <td>{{$comic_item->type}}</td>
-                    <td><a href="{{ route('comics.show', ['comic' => $comic_item->id])}}" class="btn btn-success"><i class="fa-solid fa-info"></i></a></td>
-                    <td><a href="{{ route('comics.edit', ['comic' => $comic_item->id])}}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a></td>
                     <td>
-                        {{-- <form action="{{ route('comics.destroy', ['comic' => $comic_item->id])}}" method="POST"> --}}
-                            {{-- @csrf
-                            @method('DELETE') --}}
-                            <a class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $comic_item->id }}"><i class="fa-solid fa-trash" id="toDelete"></i></a>
-                        {{-- </form> --}}
+                        <a href="{{ route('comics.show', ['comic' => $comic_item->id])}}" class="btn btn-success"><i class="fa-solid fa-info"></i></a>
                     </td>
-                    @include('modals.delete')
+                    <td>
+                        <a href="{{ route('comics.edit', ['comic' => $comic_item->id])}}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <form action="{{ route('comics.destroy', ['comic' => $comic_item->id])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-delete" type="submit" 
+                            data-title="{{ $comic_item->title }}" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $comic_item->id }}"><i class="fa-solid fa-trash" id="toDelete"></i></button>
+                        </form>
+                    </td>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+                @endforeach
+            </tbody>
+        </table>
+        @include('modals.delete')
 </div>
 @endsection 
