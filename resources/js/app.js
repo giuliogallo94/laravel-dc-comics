@@ -19,7 +19,7 @@ buttons.forEach((button) => {
         const title = button.getAttribute("data-title");
         document.getElementById("title-to-delete").innerHTML = title;
 
-        // impostare il bottone del Modal, in modo da far partire il form e far eleiminare l'elemento giusto
+        // impostare il bottone del Modal, in modo da far partire il form e far eliminare l'elemento giusto
         document
             .getElementById("action-delete")
             .addEventListener("click", () => {

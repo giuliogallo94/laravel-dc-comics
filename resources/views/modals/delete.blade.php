@@ -1,4 +1,4 @@
-  <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="delete-modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,11 +13,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          
-            <form action="{{ route('comics.destroy', ['comic' => $comic_item->id])}}" method="POST">
-              @csrf
-              @method('DELETE')
-              <button class="btn btn-danger" data-title="{{ $comic_item->title }}" id='action-delete' type="submit"><i class="fa-solid fa-trash"></i></button>
+         
+              <button class="btn btn-danger"  id='action-delete' type="button"><i class="fa-solid fa-trash"></i></button>
           </form>
         
         </div>
