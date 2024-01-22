@@ -37,17 +37,17 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-    $request->validate(
-        [
-            'title' => 'required|min:2|max:250',
-            'description' => 'nullable',
-            'thumb' => 'required|url',
-            'price' => 'required|decimal:2',
-            'series' => 'required|min:5|max:250',
-            'sale_date' => 'required|date',
-            'type' => 'required|min:5|max:250'
-        ]
-    );
+    // $request->validate(
+    //     [
+    //         'title' => 'required|min:2|max:250',
+    //         'description' => 'nullable',
+    //         'thumb' => 'required|url',
+    //         'price' => 'required|decimal:2',
+    //         'series' => 'required|min:5|max:250',
+    //         'sale_date' => 'required|date',
+    //         'type' => 'required|min:5|max:250'
+    //     ]
+    // );
 
         $form_data = $request->all();
         $comic = new Comic();
@@ -93,6 +93,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // $request->validate(
+        //     [
+        //         'title' => 'required|min:2|max:250',
+        //         'description' => 'nullable',
+        //         'thumb' => 'required|url',
+        //         'price' => 'required|decimal:2',
+        //         'series' => 'required|min:5|max:250',
+        //         'sale_date' => 'required|date',
+        //         'type' => 'required|min:5|max:250'
+        //     ]
+        // );
+
         $form_data = $request->all();
         $comic = Comic::findOrFail($id);
         $comic->update($form_data);
