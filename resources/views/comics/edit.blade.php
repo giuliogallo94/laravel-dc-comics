@@ -20,7 +20,7 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="description" id="description" class="form-control" value="{{$comic->description}}"></textarea>
+                    <textarea name="description" id="description" class="form-control">{{$comic->description}}</textarea>
                 </div>
 
                 <div class="mb-3">
@@ -49,8 +49,8 @@
                     <label for="type" class="form-label">Type</label>
                     <select class="form-select" name="type" id="type">
                         <option value="">Select</option>
-                        <option value="graphic novel">Graphic novel</option>
-                        <option value="comic book">Comic Book</option>
+                        <option @selected($comic->type === 'graphic novel') value="graphic novel">Graphic novel</option>
+                        <option @selected($comic->type === 'comic book')  value="comic book">Comic Book</option>
                     </select>
                 </div>
 

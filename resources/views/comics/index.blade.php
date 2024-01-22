@@ -8,6 +8,12 @@
 
     </div>
 
+    @if (Session('message'))
+        <div class="alert alert-success">
+            {{ (Session('message')) }}
+        </div>
+    @endif
+
     <table class="table">
         <thead>
             <tr>
